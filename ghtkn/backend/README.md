@@ -1,5 +1,8 @@
 # Support for backends other than keyring
 
+> [!IMPORTANT]
+> [If you have any comments about this document, please post them to ghtkn#394.](https://github.com/suzuki-shunsuke/ghtkn/issues/394)
+
 ## Status
 
 Draft
