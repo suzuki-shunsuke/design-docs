@@ -736,4 +736,4 @@ text / agent / gpg all apply this pattern at the time of per-file writes.
 
 ## References
 
-- security through obscurity: https://www.okta.com/ja-jp/identity-101/security-through-obscurity/
+- [security through obscurity](https://en.wikipedia.org/wiki/Security_through_obscurity)
