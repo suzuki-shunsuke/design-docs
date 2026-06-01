@@ -341,7 +341,7 @@ Since both adopt the same architecture of "socket + memory cache + key file encr
 | Encryption implementation | gpg binary (decades of track record) | Go standard library (new implementation) |
 | Agent | gpg-agent (mature) | ghtkn's own (new) |
 | Passphrase input | pinentry (mac / tty / curses / gtk) | Implemented within ghtkn |
-| Key file | `~/.gnupg/private-keys-v1.d/<keygrip>.key` | `~/.config/ghtkn/key` |
+| Key file | `~/.gnupg/private-keys-v1.d/<keygrip>.key` | `~/.local/share/ghtkn/key` |
 | Degree of attacker targeting | `~/.gnupg/` is a known target of infostealers | ghtkn-specific paths are less likely to be patterned |
 | External dependencies | gpg binary + pinentry | None |
 | Setup complexity | High (pinentry / TTL / key generation / fingerprint acquisition) | Low (only passphrase input) |
@@ -641,7 +641,7 @@ A design proposal not yet implemented. The following are assumptions at implemen
 
 #### Storage
 
-- Encryption key: `$XDG_CONFIG_HOME/ghtkn/key` (wrapped with KEK, includes salt, `0600`)
+- Encryption key: `$XDG_DATA_HOME/ghtkn/key` (wrapped with KEK, includes salt, `0600`). The key is persistent data (losing it makes the encrypted tokens unrecoverable), not user-editable config, so it lives under the data dir rather than the config dir.
 - Encrypted tokens: `$XDG_CACHE_HOME/ghtkn/agent/<client id>` (`0600`)
 
 #### Socket and communication
